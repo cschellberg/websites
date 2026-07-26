@@ -1,0 +1,385 @@
+:root {
+  --color-bg: #faf7f0;
+  --color-text: #2b2620;
+  --color-teal: #0d5c63;
+  --color-teal-dark: #073b40;
+  --color-teal-light: #e3f0ef;
+  --color-gold: #c9982e;
+  --color-gold-dark: #9c7315;
+  --color-gold-light: #faf1da;
+  --color-coral: #dd6b4c;
+  --color-coral-light: #fbe8e1;
+  --color-surface: #ffffff;
+  --color-border: #ecdfc4;
+  --color-whatsapp: #25a25a;
+  --color-whatsapp-dark: #1d8049;
+  --max-width: 1000px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Header */
+
+.site-header {
+  position: relative;
+  text-align: center;
+  padding: 2.25rem 1.5rem 2rem;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(201, 152, 46, 0.35) 0, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(201, 152, 46, 0.25) 0, transparent 40%),
+    linear-gradient(160deg, var(--color-teal) 0%, var(--color-teal-dark) 100%);
+  color: #fdfaf2;
+  overflow: hidden;
+}
+
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.site-header-inner {
+  position: relative;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 6vw, 3.4rem);
+  letter-spacing: 0.02em;
+  color: #fffdf7;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.site-header .quote {
+  margin: 0.6rem auto 0;
+  max-width: 40rem;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  font-style: italic;
+  color: var(--color-gold-light);
+}
+
+/* Nav */
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 1.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--color-surface);
+  border-bottom: 3px solid var(--color-gold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-nav a {
+  color: var(--color-teal-dark);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background: var(--color-gold-light);
+  color: var(--color-gold-dark);
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 1.75rem 0;
+}
+
+section + section {
+  border-top: 1px solid var(--color-border);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
+  color: var(--color-teal-dark);
+  margin: 0 0 1rem;
+}
+
+/* Principios */
+
+.principios-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.65rem;
+}
+
+.principio-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.1rem;
+  background: var(--color-surface);
+  border-left: 5px solid var(--color-teal);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(43, 38, 32, 0.07);
+  font-size: 1.08rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.principio-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(43, 38, 32, 0.12);
+}
+
+.principio-card.card-gold {
+  border-left-color: var(--color-gold);
+}
+
+.principio-card.card-coral {
+  border-left-color: var(--color-coral);
+}
+
+.principio-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--color-teal-light);
+  color: var(--color-teal);
+}
+
+.card-gold .principio-icon {
+  background: var(--color-gold-light);
+  color: var(--color-gold-dark);
+}
+
+.card-coral .principio-icon {
+  background: var(--color-coral-light);
+  color: var(--color-coral);
+}
+
+.principio-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+/* Actividades */
+
+.actividades-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.actividad-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-surface);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(43, 38, 32, 0.08);
+  border-top: 4px solid var(--color-gold);
+}
+
+.actividad-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--color-gold-light);
+  color: var(--color-gold-dark);
+}
+
+.actividad-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.actividad-card strong {
+  font-size: 1.1rem;
+  color: var(--color-teal-dark);
+}
+
+.actividad-card p {
+  margin: 0.25rem 0 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  color: #5a5245;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.btn-teal {
+  background: var(--color-teal);
+  color: #fffdf7;
+}
+
+.btn-whatsapp {
+  background: var(--color-whatsapp);
+  color: #ffffff;
+  font-size: 1.05rem;
+  padding: 0.75rem 1.6rem;
+}
+
+.btn-whatsapp:hover {
+  background: var(--color-whatsapp-dark);
+}
+
+/* Enlaces */
+
+.enlaces-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.9rem;
+}
+
+.enlace-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.75rem 1.1rem;
+  background: var(--color-surface);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(43, 38, 32, 0.08);
+  color: var(--color-teal-dark);
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.enlace-card:hover,
+.enlace-card:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(43, 38, 32, 0.14);
+  border-color: var(--color-gold);
+  color: var(--color-gold-dark);
+}
+
+.enlace-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: var(--color-coral-light);
+  color: var(--color-coral);
+}
+
+.enlace-icon svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+/* Contacto */
+
+.contacto-card {
+  text-align: center;
+  padding: 1.5rem 1.5rem;
+  background: linear-gradient(160deg, var(--color-teal-light), var(--color-gold-light));
+  border-radius: 14px;
+}
+
+.contacto-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--color-surface);
+  color: var(--color-whatsapp-dark);
+  box-shadow: 0 4px 12px rgba(43, 38, 32, 0.1);
+  margin-bottom: 0.6rem;
+}
+
+.contacto-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.contacto-card p {
+  margin: 0 0 0.85rem;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+
+.site-footer {
+  text-align: center;
+  padding: 1rem 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  color: #fdfaf2;
+  background: var(--color-teal-dark);
+}
+
+@media (max-width: 600px) {
+  .site-nav {
+    gap: 0.5rem 0.75rem;
+  }
+
+  section {
+    padding: 1.5rem 0;
+  }
+
+  .actividad-card {
+    flex-direction: column;
+  }
+}
