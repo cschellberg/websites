@@ -189,6 +189,26 @@ h2 {
   height: 1.35rem;
 }
 
+.principios-note {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-teal-light);
+  border-radius: 10px;
+  border-left: 5px solid var(--color-teal);
+}
+
+.principios-note h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  color: var(--color-teal-dark);
+}
+
+.principios-note p {
+  margin: 0;
+  font-size: 0.98rem;
+  color: var(--color-text);
+}
+
 /* Actividades */
 
 .actividades-list {
